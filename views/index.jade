@@ -9,19 +9,24 @@ block content
 		.container
 			.picsx
 				img(src='../images/logo1.jpg' height = '200px' width = '200px')
+
 	.container
 		.row
-			.col-md-5
-			.col-md-2
-				a.btn.btn-default(href="/tutorials/") View Recipe
-				if (user)
-					br
-					p You are logged in as #{user.username}
-					a(href="/auth/logout")  logout
-				else
+			.col-md-4
+				h1 New Recipe
+				form(method="POST", action="/foods")
 					p
-					a(href="/auth/login") Please login
-					|  or
-					a(href="/auth/register")  register
+					input(type="text", placeholder="Recipe Name", name="name")
+					p
+					input(type="text", placeholder="Youtube Link", name="Youtube")
+					p
+					Textarea(placeholder="Ingredients", name="Ingredients")
+					p
+					Textarea(placeholder="Description", name="Description")
+					p
+					input(type="text", placeholder="Date of Entry", name="Date")
+					br
+					br
+					button(type="submit") Submit
 
-  
+	
